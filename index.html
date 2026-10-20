@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101014">
+<meta name="description" content="Discover classic cinema and legally available movies on CineNest.">
+<title>CineNest - Discover Cinema</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101014;color:#f8f7fc;font-family:Arial,sans-serif}
+header{padding:20px 5%;border-bottom:1px solid #333;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:25px;font-weight:bold}
+.logo span{color:#f4bd62}
+nav a{color:#ccc;text-decoration:none;margin-left:12px}
+.hero{padding:55px 5%;background:radial-gradient(ellipse at top right,#49301d,transparent 65%)}
+small{color:#f4bd62;letter-spacing:2px}
+h1{font-size:clamp(38px,8vw,62px);margin:15px 0}
+p{line-height:1.6;color:#bdbbc8}
+.search{display:flex;gap:8px;max-width:550px}
+input,select{background:#20202a;color:white;border:1px solid #444;padding:13px;border-radius:8px}
+input{flex:1;min-width:0}
+button{background:#f4bd62;color:#16120b;padding:12px;border:0;border-radius:8px;font-weight:bold;cursor:pointer}
+main{padding:20px 5% 45px}
+.toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card{background:#1c1c25;border:1px solid #333;border-radius:12px;overflow:hidden}
+.poster{height:180px;padding:14px;display:flex;align-items:end;background:linear-gradient(145deg,#64462e,#191923)}
+.poster.blue{background:linear-gradient(145deg,#28506a,#191923)}
+.poster.purple{background:linear-gradient(145deg,#60416e,#191923)}
+.poster.green{background:linear-gradient(145deg,#315d49,#191923)}
+.poster strong{font-size:20px}
+.details{padding:12px}
+.details h3{font-size:16px;margin:5px 0}
+.details p{font-size:12px}
+.details button{width:100%}
+.note{margin-top:25px;padding:15px;background:#1c1c25;border-radius:10px}
+footer{padding:22px 5%;border-top:1px solid #333;color:#aaa;font-size:13px}
+@media(min-width:650px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.poster{height:220px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Cine<span>Nest</span></div>
+<nav><a href="#home">Home</a><a href="#movies">Movies</a></nav>
+</header>
+
+<section class="hero" id="home">
+<small>YOUR MOVIE DISCOVERY DESTINATION</small>
+<h1>Stories worth<br>discovering.</h1>
+<p>Explore classic cinema, independent films and legally available movies.</p>
+<div class="search">
+<input id="search" placeholder="Search movies..." aria-label="Search movies">
+<button id="searchBtn">Search</button>
+</div>
+</section>
+
+<main id="movies">
+<div class="toolbar">
+<h2>Explore Movies</h2>
+<select id="genre" aria-label="Filter genre">
+<option value="all">All genres</option>
+<option>Drama</option>
+<option>Adventure</option>
+<option>Comedy</option>
+<option>Documentary</option>
+</select>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="note">
+<strong>Watch responsibly</strong>
+<p>Only authorized films and verified viewing links will be published on CineNest. Copyright and commercial-use rights must be checked for each film.</p>
+</div>
+</main>
+
+<footer>
+CineNest - Independent Movie Discovery<br>
+Contact: replace this text with your business email.
+</footer>
+
+<script>
+const movies=[
+{title:"Classic Film One",genre:"Drama",color:"",desc:"Add a verified classic film."},
+{title:"Adventure Collection",genre:"Adventure",color:"blue",desc:"Add an authorized adventure film."},
+{title:"Cinema Classics",genre:"Comedy",color:"purple",desc:"Verify film distribution rights."},
+{title:"Our Planet",genre:"Documentary",color:"green",desc:"Add a licensed documentary."}
+];
+
+const search=document.getElementById("search");
+const genre=document.getElementById("genre");
+const grid=document.getElementById("grid");
+
+function render(){
+grid.replaceChildren();
+
+const found=movies.filter(m=>
+m.title.toLowerCase().includes(search.value.trim().toLowerCase())&&
+(genre.value==="all"||genre.value===m.genre)
+);
+
+if(!found.length){
+grid.textContent="No movies found.";
+return;
+}
+
+found.forEach(m=>{
+const card=document.createElement("article");
+card.className="card";
+
+const poster=document.createElement("div");
+poster.className="poster "+m.color;
+
+const name=document.createElement("strong");
+name.textContent=m.title;
+poster.append(name);
+
+const details=document.createElement("div");
+details.className="details";
+
+const title=document.createElement("h3");
+title.textContent=m.title;
+
+const meta=document.createElement("p");
+meta.textContent=m.genre;
+
+const desc=document.createElement("p");
+desc.textContent=m.desc;
+
+const btn=document.createElement("button");
+btn.textContent="View movie";
+btn.onclick=()=>alert("Demo listing only. Add a verified, authorized viewing link first.");
+
+details.append(title,meta,desc,btn);
+card.append(poster,details);
+grid.append(card);
+});
+}
+
+search.addEventListener("input",render);
+genre.addEventListener("change",render);
+document.getElementById("searchBtn").addEventListener("click",render);
+render();
+</script>
+</body>
+</html>
