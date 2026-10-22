@@ -1,133 +1,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#101014">
-<title>CineNest — Free & Legal Cinema</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101014">
+<title>CineNest — Discover Movies</title>
 <style>
-:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#101014;color:#f8f7fb;font-family:Arial,sans-serif}.top{padding:17px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333;position:sticky;top:0;background:#101014f2;z-index:2}.logo{font-size:27px;font-weight:bold;color:white;text-decoration:none}.logo span{color:#f4bd62}nav a{color:#ddd;margin-left:15px;text-decoration:none}.hero{padding:48px 5%;background:radial-gradient(ellipse at 85% 10%,#57361e,transparent 50%)}small{color:#f4bd62;letter-spacing:2px}h1{font-size:clamp(36px,7vw,68px);margin:17px 0;max-width:720px}p{color:#c5c4ce;line-height:1.6}.search{display:flex;gap:8px;max-width:720px;margin-top:22px}.search input{flex:1;min-width:0;background:#20202a;color:white;border:1px solid #444;border-radius:10px;padding:14px;font-size:16px}button,select{border:0;border-radius:10px;padding:12px;background:#f4bd62;color:#17130b;font-weight:bold;cursor:pointer}main{padding:20px 5% 45px}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.toolbar h2{font-size:27px}select{background:#20202a;color:white;border:1px solid #444;max-width:100%}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.card{border:1px solid #363640;background:#1c1c25;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}.poster{height:205px;padding:14px;display:flex;align-items:end;background:linear-gradient(145deg,var(--a),var(--b));position:relative}.poster:before{content:"CINENEST · OPEN CINEMA";position:absolute;top:14px;left:14px;font-size:9px;letter-spacing:2px}.poster strong{font-size:22px;text-shadow:0 2px 8px #0008}.body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}.meta{font-size:13px;color:#aaa}.body p{font-size:13px;flex:1;margin:0}.body button{width:100%;margin-top:8px}.note{margin:25px 0;padding:18px;background:#1c1c25;border-radius:12px;color:#bbb;line-height:1.65}.note strong{color:white}.ad-placeholder{margin:25px 0;padding:18px;border:1px dashed #555;border-radius:12px;color:#888;text-align:center;font-size:13px}footer{padding:25px 5%;border-top:1px solid #333;color:#888;font-size:13px}dialog{width:min(900px,95vw);max-height:90vh;overflow:auto;background:#17171e;color:white;border:1px solid #444;border-radius:15px;padding:0}dialog::backdrop{background:#000c}.mhead,.mbody{padding:16px}.mhead{display:flex;justify-content:space-between;align-items:center;gap:12px}.player{aspect-ratio:16/9;background:#000}.player iframe{width:100%;height:100%;border:0}.mbody a{display:inline-block;background:#f4bd62;color:#17130b;text-decoration:none;padding:12px;border-radius:9px;margin:4px 8px 4px 0;font-weight:bold}.mbody a.alt{background:#30303b;color:white}.language-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}.language-row label{color:#ddd}.language-row select{max-width:100%;min-width:160px}.small-note{font-size:12px;color:#aaa}@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.poster{height:180px}}@media(max-width:430px){.poster{height:150px}.poster strong{font-size:18px}.body{padding:10px}.body h3{font-size:15px;margin:0}.body p{font-size:12px}.hero{padding-top:35px}.top{padding:14px 5%}.logo{font-size:23px}}
-</style>
-</head>
+*{box-sizing:border-box}body{margin:0;background:#0d0d12;color:#f7f6fa;font-family:Arial,Helvetica,sans-serif}a{color:inherit}.top{display:flex;align-items:center;justify-content:space-between;padding:17px 5%;border-bottom:1px solid #292932;background:#101015;position:sticky;top:0;z-index:3}.logo{font-size:26px;font-weight:800;text-decoration:none}.logo span{color:#f3b95d}nav{display:flex;gap:18px}nav a{text-decoration:none;color:#d0cfda}.hero{padding:48px 5% 38px;background:radial-gradient(ellipse at 80% 0%,#55331e 0,transparent 55%),linear-gradient(120deg,#17131a,#101014)}.eyebrow{color:#f3b95d;font-size:12px;letter-spacing:2px;font-weight:bold}.hero h1{font-size:clamp(38px,6vw,64px);max-width:750px;line-height:1.05;margin:17px 0}.hero p{max-width:700px;color:#c1bfca;line-height:1.6}.searchrow{display:flex;gap:10px;max-width:720px;margin-top:22px}.searchrow input{flex:1;min-width:0;padding:15px;border-radius:10px;border:1px solid #41414b;background:#202029;color:#fff;font-size:16px}.btn{background:#f3b95d;color:#1a140b;border:0;border-radius:10px;padding:13px 18px;font-weight:bold;cursor:pointer}.filters{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.filters select{padding:10px;background:#202029;border:1px solid #41414b;border-radius:9px;color:white}.section{padding:24px 5%}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:12px}.section h2{font-size:25px;margin:14px 0 18px}.sub{color:#9e9da8;font-size:13px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.card{border:1px solid #30303a;background:#1a1a23;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}.poster{height:205px;padding:13px;display:flex;align-items:end;position:relative;background:linear-gradient(145deg,var(--a),#17171e)}.poster:before{content:'CINENEST';position:absolute;top:13px;left:13px;font-size:10px;letter-spacing:2px;color:#ffffffc9}.poster strong{font-size:21px;text-shadow:0 2px 8px #000b}.body{padding:13px;display:flex;flex-direction:column;gap:8px;flex:1}.body h3{font-size:16px;margin:0}.meta{font-size:12px;color:#aaa}.body p{font-size:13px;color:#c0bfca;line-height:1.5;margin:0;flex:1}.body .btn{margin-top:6px;width:100%}.shelf{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.notice{margin:20px 5%;padding:18px;border-radius:12px;background:#1a1a23;color:#bdbcc7;line-height:1.65}.notice strong{color:#fff}.ad{margin:22px 5%;border:1px dashed #4b4b55;padding:20px;text-align:center;color:#8d8c98;border-radius:12px;font-size:13px}footer{padding:26px 5%;border-top:1px solid #292932;color:#8d8c98;font-size:13px}dialog{width:min(900px,95vw);max-height:90vh;overflow:auto;background:#17171f;color:white;border:1px solid #444;border-radius:15px;padding:0}dialog::backdrop{background:#000c}.mhead,.mbody{padding:16px}.mhead{display:flex;justify-content:space-between;align-items:center}.player{aspect-ratio:16/9;background:#000}.player iframe{width:100%;height:100%;border:0}.mbody p{color:#c2c1cb;line-height:1.6}.mbody a{display:inline-block;margin:5px 7px 5px 0;padding:12px;border-radius:9px;background:#f3b95d;color:#17130b;text-decoration:none;font-weight:bold}.mbody a.secondary{background:#30303b;color:white}.langrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0}.langrow select{background:#24242d;color:white;border:1px solid #444;border-radius:9px;padding:11px}.tiny{font-size:12px;color:#999}@media(max-width:800px){.grid,.shelf{grid-template-columns:repeat(2,minmax(0,1fr))}.poster{height:180px}}@media(max-width:480px){nav{gap:11px}nav a{font-size:13px}.logo{font-size:22px}.poster{height:150px}.poster strong{font-size:17px}.body{padding:10px}.hero{padding-top:35px}.section h2{font-size:22px}}
+</style></head>
 <body>
-<header class="top"><a class="logo" href="#home">Cine<span>Nest</span></a><nav><a href="#home">Home</a><a href="#movies">Movies</a><a href="#about">About</a></nav></header>
-<section class="hero" id="home">
-<small>FREE CINEMA · RIGHTS-AWARE CATALOGUE</small>
-<h1>Find your next movie night.</h1>
-<p>Discover free-to-watch films from sources that publish them openly. Availability, licenses, audio tracks and subtitles depend on each source.</p>
-<div class="search"><input id="q" placeholder="Search titles or genres..." aria-label="Search movies"><button id="searchBtn">Search</button></div>
-</section>
-<main id="movies">
-<div class="toolbar"><h2>Explore Movies</h2><select id="genre" aria-label="Filter by genre"><option value="all">All genres</option><option value="Animation">Animation</option><option value="Documentary">Documentary</option><option value="Sci-Fi">Sci-Fi</option></select></div>
-<div id="grid" class="grid"></div>
-<div class="note" id="about"><strong>About this catalogue</strong><br>This starter catalogue includes a Creative Commons open movie and official open-movie resources. Always check the exact film page for license, attribution, soundtrack and commercial-use conditions before embedding it or placing ads around it. A movie being watchable online does not automatically mean it can be redistributed or monetized.</div>
-<div class="ad-placeholder">AD SPACE · Add an ad network's approved code only after reviewing its policies and the rights for every title.</div>
-</main>
-<footer>© <span id="year"></span> CineNest · Independent movie discovery. Not affiliated with Netflix or any listed rights holder.</footer>
-<dialog id="modal">
-<div class="mhead"><strong id="mtitle"></strong><button id="close" aria-label="Close">✕</button></div>
-<div class="player" id="player"></div>
-<div class="mbody">
-<div id="mmeta" class="meta"></div>
-<p id="mdesc"></p>
-<div class="language-row"><label for="audio">Audio language:</label><select id="audio" aria-label="Available audio languages"></select></div>
-<p class="small-note" id="languageNote">Only audio options verified for this source are listed. Subtitles are not the same as dubbed audio.</p>
-<a id="source" target="_blank" rel="noopener noreferrer">Open official source</a>
-<a id="license" class="alt" target="_blank" rel="noopener noreferrer">Check license / details</a>
-</div>
-</dialog>
+<header class="top"><a class="logo" href="#home">Cine<span>Nest</span></a><nav><a href="#home">Home</a><a href="#movies">Movies</a><a href="#collections">Collections</a></nav></header>
+<section class="hero" id="home"><div class="eyebrow">DISCOVER · WATCH · REPEAT</div><h1>Your next movie night starts here.</h1><p>Browse open-movie projects and official video collections. Every title links to its source so you can check availability, license terms and language options.</p><div class="searchrow"><input id="q" placeholder="Search movies, collections or genres…" aria-label="Search titles"><button class="btn" id="search">Search</button></div><div class="filters"><select id="genre"><option value="all">All genres</option><option>Animation</option><option>Documentary</option><option>Sci-Fi</option><option>Short Film</option></select><select id="language"><option value="all">Any audio language</option><option value="English">English audio verified</option><option value="Hindi">Hindi audio</option><option value="Urdu">Urdu audio</option><option value="Spanish">Spanish audio</option></select></div></section>
+<section class="section" id="movies"><div class="sectionhead"><h2>Featured Open Movies</h2><span class="sub" id="count"></span></div><div class="grid" id="grid"></div></section>
+<section class="section" id="collections"><div class="sectionhead"><h2>Explore Official Collections</h2><span class="sub">Open source pages</span></div><div class="shelf" id="collectionsGrid"></div></section>
+<div class="notice"><strong>Language & rights note</strong><br>Audio choices are shown only when verified for the exact video. Subtitles are not dubbed audio. A film being free to watch does not automatically mean it can be rehosted or monetized; check the individual rights and commercial-use terms before adding ads.</div>
+<div class="ad">AD SPACE · Add your ad network's approved code only after checking its policies and film permissions.</div>
+<footer>© <span id="year"></span> CineNest · Independent discovery site. Not affiliated with MovieBox, Netflix or listed rights holders.</footer>
+<dialog id="modal"><div class="mhead"><strong id="title"></strong><button class="btn" id="close">✕</button></div><div class="player" id="player"></div><div class="mbody"><div class="meta" id="meta"></div><p id="desc"></p><div class="langrow"><label for="audio">Audio language</label><select id="audio"></select></div><p class="tiny" id="langnote"></p><a id="source" target="_blank" rel="noopener noreferrer">Open official source</a><a class="secondary" id="rights" target="_blank" rel="noopener noreferrer">Check license / details</a></div></dialog>
 <script>
-/*
-  To add a title, first verify its source and license. "audioTracks" should
-  contain only real, verified audio versions/tracks for that exact source.
-  Do not add a language just because a subtitle exists.
-*/
-const movies = [
-  {
-    title:"Big Buck Bunny", year:"2008", genre:"Animation",
-    desc:"An open animated short from the Blender Open Movies project. Review the official project page for license and attribution details.",
-    a:"#27624d", b:"#17171e",
-    embed:"https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ",
-    source:"https://peach.blender.org/",
-    license:"https://creativecommons.org/licenses/by/3.0/",
-    audioTracks:[{label:"Original audio (source)", lang:"original", url:"https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ"}]
-  },
-  {
-    title:"Blender Open Movies", year:"Collection", genre:"Animation",
-    desc:"Explore more films published by the Blender Foundation. Open each film's own page to confirm the license and available language tracks.",
-    a:"#4a426b", b:"#17171e",
-    embed:null,
-    source:"https://studio.blender.org/films/",
-    license:"https://studio.blender.org/films/",
-    audioTracks:[]
-  },
-  {
-    title:"Internet Archive: Public-Domain Film Search", year:"Collection", genre:"Documentary",
-    desc:"Search for films marked public domain. Verify the rights statement for the exact item and version before embedding or monetizing it.",
-    a:"#31556a", b:"#171a27",
-    embed:null,
-    source:"https://archive.org/search?query=mediatype%3Amovies%20AND%20licenseurl%3A%22http%3A%2F%2Fcreativecommons.org%2Fpublicdomain%2Fmark%2F1.0%2F%22",
-    license:"https://archive.org/about/terms.php",
-    audioTracks:[]
-  },
-  {
-    title:"NASA Image and Video Library", year:"Collection", genre:"Documentary",
-    desc:"Explore NASA video and educational media. Check each asset's usage notes, and remember that third-party material may have separate restrictions.",
-    a:"#3e566a", b:"#17171e",
-    embed:null,
-    source:"https://images.nasa.gov/",
-    license:"https://www.nasa.gov/nasa-brand-center/images-and-media/",
-    audioTracks:[]
-  }
+const movies=[
+{title:"Big Buck Bunny",year:"2008",genre:"Animation",audio:["English"],desc:"An open animated short from Blender Open Movies. Check the official project page for the current license and attribution requirements.",color:"#27624d",embed:"https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ",source:"https://peach.blender.org/",rights:"https://creativecommons.org/licenses/by/3.0/"},
+{title:"Sintel",year:"2010",genre:"Animation",audio:[],desc:"A Blender Foundation open-movie project. Use the official film page to watch and confirm its current license and language versions.",color:"#61413d",source:"https://durian.blender.org/",rights:"https://durian.blender.org/"},
+{title:"Tears of Steel",year:"2012",genre:"Sci-Fi",audio:[],desc:"A Blender Foundation science-fiction short film. Visit the official project page for the film, source files and license information.",color:"#354e69",source:"https://mango.blender.org/",rights:"https://mango.blender.org/"},
+{title:"Cosmos Laundromat",year:"2015",genre:"Animation",audio:[],desc:"An open animated film project by Blender. Open the official page to check viewing availability and rights.",color:"#594b76",source:"https://cloud.blender.org/p/cosmos-laundromat/",rights:"https://cloud.blender.org/p/cosmos-laundromat/"},
+{title:"NASA Video Library",year:"Collection",genre:"Documentary",audio:[],desc:"Explore NASA's official image and video collection. Review each asset's notes because third-party material may have separate restrictions.",color:"#234b70",source:"https://images.nasa.gov/",rights:"https://www.nasa.gov/nasa-brand-center/images-and-media/"},
+{title:"Library of Congress: National Screening Room",year:"Collection",genre:"Short Film",audio:[],desc:"Historical films and moving images from the Library of Congress. Check the rights advisory on each individual item.",color:"#65513a",source:"https://www.loc.gov/collections/national-screening-room/",rights:"https://www.loc.gov/rr/print/res/rights.html"},
+{title:"Internet Archive: Film Search",year:"Collection",genre:"Documentary",audio:[],desc:"Search the archive for films, then verify the rights statement and commercial-use conditions on each item's own page.",color:"#345c57",source:"https://archive.org/details/movies",rights:"https://archive.org/about/terms.php"}
 ];
-const grid=document.getElementById('grid'), q=document.getElementById('q'), genre=document.getElementById('genre');
-function render(){
-  const query=q.value.trim().toLowerCase(), g=genre.value;
-  const found=movies.filter(m=>(g==='all'||m.genre===g)&&(!query||(m.title+' '+m.genre+' '+m.year+' '+m.desc).toLowerCase().includes(query)));
-  grid.replaceChildren();
-  if(!found.length){grid.style.display='block';grid.textContent='No titles match. Try another search or choose All genres.';return}
-  grid.style.display='grid';
-  found.forEach(m=>{
-    const c=document.createElement('article');c.className='card';
-    const poster=document.createElement('div');poster.className='poster';poster.style.setProperty('--a',m.a);poster.style.setProperty('--b',m.b);
-    const title=document.createElement('strong');title.textContent=m.title;poster.append(title);
-    const body=document.createElement('div');body.className='body';
-    const h=document.createElement('h3');h.textContent=m.title;
-    const meta=document.createElement('div');meta.className='meta';meta.textContent=m.year+' · '+m.genre;
-    const p=document.createElement('p');p.textContent=m.desc;
-    const btn=document.createElement('button');btn.textContent=m.embed?'Play / Details':'Open collection';btn.onclick=()=>openMovie(m);
-    body.append(h,meta,p,btn);c.append(poster,body);grid.append(c);
-  });
-}
-function openMovie(m){
-  document.getElementById('mtitle').textContent=m.title;
-  document.getElementById('mmeta').textContent=m.year+' · '+m.genre;
-  document.getElementById('mdesc').textContent=m.desc;
-  const player=document.getElementById('player');player.replaceChildren();
-  const audio=document.getElementById('audio');audio.replaceChildren();
-  if(m.embed){
-    const iframe=document.createElement('iframe');iframe.src=m.embed;iframe.title=m.title+' player';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';iframe.allowFullscreen=true;player.append(iframe);
-    const tracks=m.audioTracks||[];
-    tracks.forEach((track,i)=>{const opt=document.createElement('option');opt.value=String(i);opt.textContent=track.label;audio.append(opt)});
-    audio.disabled=tracks.length<2;
-    audio.onchange=()=>{const track=tracks[Number(audio.value)];if(track&&track.url){player.replaceChildren();const next=document.createElement('iframe');next.src=track.url;next.title=m.title+' player';next.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';next.allowFullscreen=true;player.append(next)}};
-    document.getElementById('languageNote').textContent=tracks.length>1?'Choose a verified audio version from the list.':'Only one source audio option is currently verified for this title. No Hindi, Urdu or Spanish dub is being claimed.';
-  } else {
-    const msg=document.createElement('div');msg.style.cssText='height:100%;min-height:180px;display:grid;place-items:center;padding:25px;text-align:center;color:#ddd';msg.textContent='This is a collection/source page, not an embedded movie player. Open the official source below to choose a title.';player.append(msg);
-    const opt=document.createElement('option');opt.textContent='Not applicable — collection page';opt.value='';audio.append(opt);audio.disabled=true;
-    document.getElementById('languageNote').textContent='This collection does not provide one specific movie or a verified audio-track list.';
-  }
-  document.getElementById('source').href=m.source;
-  document.getElementById('license').href=m.license;
-  document.getElementById('modal').showModal();
-}
-document.getElementById('searchBtn').onclick=render;
-q.addEventListener('input',render);
-genre.addEventListener('change',render);
-document.getElementById('close').onclick=()=>document.getElementById('modal').close();
-document.getElementById('modal').addEventListener('close',()=>document.getElementById('player').replaceChildren());
-document.getElementById('year').textContent=new Date().getFullYear();
-render();
-</script>
-</body>
-</html>
+const collections=[
+{title:"Blender Open Movies",genre:"Animation collection",desc:"Official open-movie projects and film pages.",color:"#4b3f68",url:"https://studio.blender.org/films/"},
+{title:"NASA Image & Video Library",genre:"Space & documentary",desc:"Official NASA media library.",color:"#2b4e6e",url:"https://images.nasa.gov/"},
+{title:"National Screening Room",genre:"Historical cinema",desc:"Library of Congress film collection.",color:"#685036",url:"https://www.loc.gov/collections/national-screening-room/"},
+{title:"Internet Archive Movies",genre:"Film archive",desc:"Browse and verify rights title by title.",color:"#31584d",url:"https://archive.org/details/movies"}
+];
+const $=id=>document.getElementById(id), grid=$("grid");
+function card(item,collection=false){const el=document.createElement("article");el.className="card";const poster=document.createElement("div");poster.className="poster";poster.style.setProperty("--a",item.color);const name=document.createElement("strong");name.textContent=item.title;poster.append(name);const body=document.createElement("div");body.className="body";const h=document.createElement("h3");h.textContent=item.title;const meta=document.createElement("div");meta.className="meta";meta.textContent=(collection?item.genre:item.year+" · "+item.genre);const p=document.createElement("p");p.textContent=item.desc;const b=document.createElement("button");b.className="btn";b.textContent=collection||!item.embed?"Open official source":"Play / Details";b.onclick=()=>collection||!item.embed?window.open(item.url||item.source,"_blank","noopener"):openMovie(item);body.append(h,meta,p,b);el.append(poster,body);return el}
+function render(){grid.replaceChildren();const query=$("q").value.toLowerCase().trim(),g=$("genre").value,lang=$("language").value;const list=movies.filter(m=>(g==="all"||m.genre===g)&&(!query||(m.title+" "+m.genre+" "+m.desc+" "+m.year).toLowerCase().includes(query))&&(lang==="all"||m.audio.includes(lang)));list.forEach(m=>grid.append(card(m)));$("count").textContent=list.length+" titles";if(!list.length){grid.textContent="No matching titles. Try another search or audio filter."}}
+function openMovie(m){$("title").textContent=m.title;$("meta").textContent=m.year+" · "+m.genre;$("desc").textContent=m.desc;$("player").replaceChildren();if(m.embed){const f=document.createElement("iframe");f.src=m.embed;f.title=m.title;f.allow="accelerometer; autoplay; encrypted-media; picture-in-picture; web-share";f.allowFullscreen=true;$("player").append(f)}else{const box=document.createElement("div");box.style.cssText="min-height:180px;display:grid;place-items:center;padding:25px;text-align:center;color:#ddd";box.textContent="This title links to its official source rather than embedding an unverified stream.";$("player").append(box)}const audio=$("audio");audio.replaceChildren();const tracks=m.audio||[];if(m.embed&&tracks.length){tracks.forEach(l=>{const o=document.createElement("option");o.textContent=l+" audio (verified)";audio.append(o)});audio.disabled=tracks.length<2;$("langnote").textContent=tracks.length===1?"One audio option is listed; no alternate dub is claimed.":"Only verified audio options are listed."}else{const o=document.createElement("option");o.textContent="No verified audio list";audio.append(o);audio.disabled=true;$("langnote").textContent="Open the official page to check available audio and subtitles. Language filters do not assume dubbing exists."}$("source").href=m.source;$("rights").href=m.rights;$("modal").showModal()}
+$("collectionsGrid").replaceChildren(...collections.map(c=>card(c,true)));$("search").onclick=render;$("q").addEventListener("input",render);$("genre").onchange=render;$("language").onchange=render;$("close").onclick=()=>$("modal").close();$("modal").addEventListener("close",()=>$("player").replaceChildren());$("year").textContent=new Date().getFullYear();render();
+</script></body></html>
